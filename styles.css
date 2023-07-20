@@ -18,3 +18,8 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+
+.redrawCanvasButton{
+    width: 100px;
+    height: 30px;
+}
