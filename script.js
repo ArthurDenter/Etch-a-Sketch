@@ -1,14 +1,25 @@
+const divBoxSize = function (numberOfSquareDivsPerSide, canvasSize, borderThickness) {
+  return Math.floor(((canvasSize / numberOfSquareDivsPerSide) - (borderThickness * 2)) * 10) / 10;
+}
+
 const createNewGridOFSquareDivs = function (numberOfSquareDivsPerSide) {
   const mainContainer = document.querySelector(".main-container");
-  for (let i = 0; i < numberOfSquareDivsPerSide; i++) {
-    for (let j = 0; j < numberOfSquareDivsPerSide; j++) {
-      const divBox = document.createElement("div");
-      divBox.classList.add("divBox");
-      mainContainer.appendChild(divBox);
-      divBox.addEventListener("mouseover", () => {
-        divBox.style.backgroundColor = "red";
-      });
-    };
+  for (let i = 0; i < Math.pow(numberOfSquareDivsPerSide, 2); i++) {
+    const divBox = document.createElement("div");
+    divBox.classList.add("divBox");
+    divBox.setAttribute("draggable", "false");
+    divBox.style.width = `${divBoxSize(numberOfSquareDivsPerSide, 500, 1)}px`;
+    divBox.style.height = `${divBoxSize(numberOfSquareDivsPerSide, 500, 1)}px`;
+    mainContainer.appendChild(divBox);
+    divBox.addEventListener("mouseover", (eventMouseover) => {
+      console.log(eventMouseover);
+      if (eventMouseover.buttons > 0) {
+        divBox.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      };
+    });
+    divBox.addEventListener("mousedown", () => {
+      divBox.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    });
   };
 };
 
