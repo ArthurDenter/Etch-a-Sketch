@@ -11,7 +11,7 @@ body {
     font-style: normal;
 }
 
-h1{
+h1 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -20,10 +20,10 @@ h1{
     margin: 0;
 }
 
-.main-container{
+.main-container {
     display: flex;
     flex-direction: column;
-    gap:50px;
+    gap: 50px;
     align-items: center;
 }
 
@@ -40,57 +40,66 @@ h1{
     align-content: flex-start;
 }
 
-.tools-container{
+.tools-container {
     display: flex;
     flex-direction: column;
     gap: 25px;
     justify-content: center;
 }
 
-.monochrom-black button{
+.monochrom-black button {
     background-color: black;
 }
 
-.monochrom-white button{
+.monochrom-white button {
     background-color: white;
 }
 
-.colorpicker button{
+.colorpicker button {
     border-radius: 100%;
     width: 50px;
-    height:50px;
+    height: 50px;
     text-decoration: none;
     border: 2px solid black;
 }
 
-.color button{
+.color button {
     display: flex;
     flex-direction: column;
     overflow: hidden;
     align-items: center;
     justify-content: space-between;
-    padding:0;
+    padding: 0;
     transform: rotate(-45deg);
 }
 
-.color-icon{
-    width: 100%;
-    height:100%
+.buttonIsSelected {
+    -webkit-animation: pulsate-fwd 2s ease-in-out infinite both;
+    animation: pulsate-fwd 2s ease-in-out infinite both;
 }
 
-.c1{
+.color-icon {
+    width: 100%;
+    height: 100%
+}
+
+.c1 {
     background-color: #FFBE0B;
 }
-.c2{
+
+.c2 {
     background-color: #FB5607;
 }
-.c3{
+
+.c3 {
     background-color: #FF006E;
 }
-.c4{
+
+.c4 {
     background-color: #8338EC;
 }
-.c5{
+
+.c5 {
     background-color: #3A86FF;
 }
 
@@ -112,3 +121,38 @@ h1{
     background-color: black;
     color: white;
 }
+
+/**
+ * ----------------------------------------
+ * animation pulsate-fwd
+ * ----------------------------------------
+ */
+ @-webkit-keyframes pulsate-fwd {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes pulsate-fwd {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
